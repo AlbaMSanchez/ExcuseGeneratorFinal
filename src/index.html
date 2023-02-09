@@ -4,6 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
+    <style>
+      .container_excuse {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 100px;
+        font-size: large;
+        background-color: rgb(217, 222, 224);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: Geneva, Verdana, sans-serif;
+      }
+    </style>
+    <script>
+      let who = ["the dog", "my granma", "his turtle", "my bird"];
+      let what = ["eat", "pissed", "crushed", "broked"];
+      let when = [
+        "before the class",
+        "right in time",
+        "when I finished",
+        "during my lunch",
+        "while I was praying"
+      ];
+
+      let excuse = "";
+
+      function excuseGenerator() {
+        let numWhoRandom = Math.floor(Math.random() * 3 + 1);
+        let numWhatRandom = Math.floor(Math.random() * 3 + 1);
+        let numWhenRandom = Math.floor(Math.random() * 4 + 1);
+        excuse =
+          who[numWhoRandom] +
+          " " +
+          what[numWhatRandom] +
+          " my homeworks " +
+          when[numWhenRandom];
+        document.getElementById("excuse").innerHTML = excuse;
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -13,17 +53,12 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <div class="container_excuse">
+      <strong>
+        OMG! you will not believe me but...
+      </strong>
+      <p id="excuse"></p>
+      <button onclick="excuseGenerator()">Generar Excusa</button>
     </div>
   </body>
 </html>
